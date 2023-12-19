@@ -53,8 +53,8 @@ const Form = () => {
 
     return (     
         <>   
-            <div className="chat-box">
-                {message.map((m) =>
+            <div className="chat-box chatbox-content">
+                {message.map( (m) =>
 
                     <h3 key={m.createdAt}>{m.user}: {m.text} </h3>
                 )}

@@ -12,7 +12,7 @@ const Chat = () => {
 
                 <li>
                     {/* <p className="circle"></p> */}
-                    <img className="circle" src={auth?.currentUser?.photoURL} alt="Profile" />
+                    <img loading="lazy" className="circle" src={auth?.currentUser?.photoURL} alt="Profile" />
                 </li>
 
                 <li>

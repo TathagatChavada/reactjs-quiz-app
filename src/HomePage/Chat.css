@@ -36,8 +36,26 @@ li .circle {
     border: 1px solid rgba(178, 178, 178, 0.3);
 
     height: 75vh;
-    overflow:scroll;
+    overflow:hidden;
 }
+
+.chatbox-content {
+    overflow-y: scroll; /* Enable vertical scrolling */
+    padding-right: 17px; /* Adjust for the width of the hidden scrollbar */
+  }
+  
+  /* Hide the scrollbar thumb and track */
+.chatbox-content::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.chatbox-content::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  
+.chatbox-content::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 
 input{
     margin: 1em;
@@ -45,8 +63,7 @@ input{
     padding: 1em;
     width:50%;
     border-radius: 6px;
-    border: 1px solid rgba(178, 178, 178, 0.3)
-    
+    border: 1px solid rgba(178, 178, 178, 0.3)  
 }
 
 
