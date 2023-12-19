@@ -57,6 +57,14 @@ li .circle {
     background-color: transparent;
   }
 
+.own-message{
+    text-align: right;
+}
+
+.other-message{
+    text-align: left;
+}
+
 input{
     margin: 1em;
     margin-right: 2em;
@@ -86,3 +94,5 @@ input{
     height: 40px;
     border-radius: 50%;
 }
+
+

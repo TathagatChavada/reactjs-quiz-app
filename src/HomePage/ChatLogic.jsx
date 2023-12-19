@@ -2,7 +2,7 @@ import { addDoc, collection, serverTimestamp,
         onSnapshot, query, where, orderBy} from "firebase/firestore";
 
 import { auth, db } from "../config/firebase";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Chat.css"
 
 
@@ -10,6 +10,7 @@ const Form = () => {
 
     const [newMessage, setNewMessage] = useState("");
     const [message, setMessage] = useState([]);
+    const chatboxRef = useRef();
 
     const messageRef = collection(db,"messages");
 
@@ -49,14 +50,15 @@ const Form = () => {
         setNewMessage("");
     }
 
-
+    
 
     return (     
         <>   
-            <div className="chat-box chatbox-content">
+            <div className="chat-box chatbox-content" ref={chatboxRef}>
                 {message.map( (m) =>
 
-                    <h3 key={m.createdAt}>{m.user}: {m.text} </h3>
+                    <h3 className={`message ${m.user === auth?.currentUser?.displayName ? "own-message": "other-message"}`}
+                     key={m.createdAt}>{m.user}: {m.text} </h3>
                 )}
             </div>
 
